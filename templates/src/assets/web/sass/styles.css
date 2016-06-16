@@ -32,4 +32,34 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/*
+Changing Susy default global settings
+With help from https://css-tricks.com/build-web-layouts-easily-susy/
+*/
+main {
+  max-width: 656px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px; }
+  main:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+li {
+  content: " ";
+  width: 82px;
+  height: 70px;
+  width: 11.39241%;
+  float: left;
+  margin-right: 1.26582%;
+  margin: 0 auto;
+  border: 2px solid grey; }
+
+.row-1 li, .row-3 li, .row-5 li, .row-7 li {
+  background-color: firebrick; }
+
+.row-2 li, .row-4 li, .row-6 li, .row-8 li {
+  background-color: blue; }
+
 /*# sourceMappingURL=styles.css.map */

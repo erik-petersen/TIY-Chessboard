@@ -2,3 +2,42 @@
 @import "../../../../../bower_components/susy/sass/susy";
 @import "../../../../../bower_components/font-awesome/css/font-awesome.css";
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+$squareWidth: 82px;
+$squareHeight: 70px;
+$squareColor1: firebrick;
+// $squareColor2:
+
+/*
+Changing Susy default global settings
+With help from https://css-tricks.com/build-web-layouts-easily-susy/
+*/
+
+// Susy is doing all the calculations for 8 columns this time
+$susy: (
+  columns: 16,
+  container: 656px,
+);
+
+main {
+  @include container;
+  padding-left: 40px;
+} // end main
+
+li {
+  content: " ";
+  width: $squareWidth;
+  height: $squareHeight;
+  @include span( 2 of 16 ); // each li will take up 1 column
+  // @include gallery(2 of 16);
+  margin: 0 auto;
+  border: 2px solid grey;
+}
+
+.row-1 li, .row-3 li, .row-5 li, .row-7 li {
+  background-color: $squareColor1;
+}
+
+.row-2 li, .row-4 li, .row-6 li, .row-8 li {
+  background-color: blue;
+}

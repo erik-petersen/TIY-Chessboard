@@ -64,7 +64,8 @@ li {
 .even-light {
   background-image: url("../../web/img/dirt.jpg"); }
 
-span {
+span,
+.chess-piece {
   font-size: 3.5em;
   font-weight: 700;
   margin-left: 7px; }

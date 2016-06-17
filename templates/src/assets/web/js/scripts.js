@@ -11,7 +11,7 @@ $( function() {
   var row8 = $( ".row-8 li" );
 
   var chessBoard = [ row1, row2, row3, row4, row5, row6, row7, row8 ];
-  console.log( chessBoard[0][2] );
+  console.log( chessBoard[6][4] );
 
   var forwardClicks = 0;
   $( ".step-forward" ).on( "click", function() {
@@ -19,35 +19,28 @@ $( function() {
     forwardClicks++;
     console.log( forwardClicks );
 
-
-    $( ".container" )
-      .contents()
-        .filter(function() {
-          return this.nodeType === 3;
-        })
-          .wrap( "<p></p>" )
-          .end()
-        .filter( "br" )
-        .remove();
-
-
     switch ( forwardClicks ) {
       case 1:
-        console.log( "Before: " + chessBoard[6][3].textContent );
-        console.log( "Before: " + chessBoard[4][3].textContent );
+        console.log( "Before: " + chessBoard[6][4].textContent );
+        console.log( "Before: " + chessBoard[4][4].textContent );
 
-        var temp = chessBoard[4][3];
-        chessBoard[4][3] = chessBoard[6][3];
-        chessBoard[6][3] = temp;
+        // var aChild = element.appendChild(aChild);
+        var display = chessBoard[6][4];
+        console.log( $(display).children().html() );
+        $(chessBoard[4][4]).append( $(display).html() );
+        $(chessBoard[6][4]).html( "" );
 
-        $( chessBoard[4][3] ).text( $(chessBoard[6][3]) );
-        $( chessBoard[6][3] ).text( $(chessBoard[4][3]) );
+        // chessBoard[4][4] = chessBoard[6][4];
+        // chessBoard[6][4] = "";
 
-        // $( chessBoard[4][3] ).append( $(chessBoard[6][3]) );
-        // $( chessBoard[6][3] ).append( $(chessBoard[4][3]) );
+        // $( chessBoard[4][3] ).text( "" );
+        // $( chessBoard[6][3] ).text( $(chessBoard[4][3]) );
 
-        console.log( "After: " + chessBoard[6][3].textContent );
-        console.log( "After: " + chessBoard[4][3].textContent );
+        // $( chessBoard[4][4] ).append( $(chessBoard[6][4]) );
+        // $( chessBoard[6][4] ).text( "" );
+
+        console.log( "After: " + chessBoard[6][4].textContent );
+        console.log( "After: " + chessBoard[4][4].textContent );
         break;
       case 2:
         console.log( chessBoard[6][3].textContent );

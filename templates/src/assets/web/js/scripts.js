@@ -1,6 +1,7 @@
 $( function() {
   "use strict";
 
+  // grabbing the 8 rows and storing each row in an array
   var row1 = $( ".row1 li" );
   var row2 = $( ".row-2 li" );
   var row3 = $( ".row-3 li" );
@@ -10,9 +11,14 @@ $( function() {
   var row7 = $( ".row-7 li" );
   var row8 = $( ".row-8 li" );
 
+  // storing the 8 row arrays in a big array
   var chessBoard = [ row1, row2, row3, row4, row5, row6, row7, row8 ];
   // console.log( chessBoard[6][3] );
 
+  /*
+    storing the 9 moves of the Catalan Opening.  Piece is where is is and destination1
+    is where it is going
+  */
   var piece1 = chessBoard[6][3];
   var destination1 = chessBoard[4][3];
   var piece2 = chessBoard[0][6];
@@ -30,12 +36,12 @@ $( function() {
   var piece8 = chessBoard[0][5];
   var destination8 = chessBoard[1][4];
 
-  var forwardClicks = 0;
+  var forwardClicks = 0; // variable to hold how many forward clicks have been made
 
   /***********************************************************
   FUNCTIONS
   ***********************************************************/
-
+  // This function contains the original code I was using
   // function move1( display1, empty1 ) {
   //   console.log( "Before: " + chessBoard[6][3].textContent );
   //   console.log( "Before: " + chessBoard[4][3].textContent );
@@ -47,6 +53,10 @@ $( function() {
   //   console.log( "After: " + chessBoard[4][3].textContent );
   // }
 
+  /*
+    this function is used to make the moves, swapping values of piece and destination.
+    this is used in the switch below
+  */
   function move( piece, destination ) {
     $( destination ).append( $( piece ).html() );
     $( piece ).html( "" );
@@ -57,16 +67,19 @@ $( function() {
   ***********************************************************/
   $( ".step-forward" ).on( "click", function() {
 
+    // when forward button is clicked, increase the counter by 1
     forwardClicks++;
 
     console.log( forwardClicks );
 
+    // match the number of clicks to the appropriate case
     switch ( forwardClicks ) {
       case 1:
         move( piece1, destination1 );
         console.log( destination1 );
         break;
       case 2:
+        // DOES NOT WORK AT THE MOMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         // move( piece2, destination2 );
         var display = chessBoard[0][6];
         console.log( $(display).children().html() );
@@ -89,6 +102,7 @@ $( function() {
         move( piece7, destination7 );
         break;
       case 8:
+        // DOES NOT WORK AT THE MOMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         // move( display8, empty8 );
         var piece = chessBoard[0][5];
         var destination = chessBoard[1][4];
@@ -116,6 +130,7 @@ $( function() {
 
   $( ".step-backward" ).on( "click", function() {
 
+    // match the number of clicks to the appropriate case...at the end, decrease forwardClicks
     switch ( forwardClicks ) {
       case 1:
         console.log( "Before: " + chessBoard[6][3].textContent );

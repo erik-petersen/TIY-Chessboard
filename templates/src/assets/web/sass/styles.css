@@ -54,12 +54,36 @@ li {
   float: left;
   margin-right: 1.26582%;
   margin: 0 auto;
-  border: 2px solid grey; }
+  cursor: pointer; }
 
-.row-1 li, .row-3 li, .row-5 li, .row-7 li {
-  background-color: firebrick; }
+.odd-dark,
+.even-dark {
+  background-image: url("../../web/img/grass.jpg"); }
 
-.row-2 li, .row-4 li, .row-6 li, .row-8 li {
-  background-color: blue; }
+.odd-light,
+.even-light {
+  background-image: url("../../web/img/dirt.jpg"); }
+
+span {
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-left: 7px; }
+
+.see-moves {
+  margin-left: 13em; }
+
+.see-moves button {
+  width: 49.36709%;
+  float: left;
+  margin-right: 1.26582%;
+  width: 82px;
+  margin-top: 2em;
+  font-size: 1em;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -5,8 +5,6 @@
 
 $squareWidth: 82px;
 $squareHeight: 70px;
-$squareColor1: firebrick;
-// $squareColor2:
 
 /*
 Changing Susy default global settings
@@ -29,15 +27,39 @@ li {
   width: $squareWidth;
   height: $squareHeight;
   @include span( 2 of 16 ); // each li will take up 1 column
-  // @include gallery(2 of 16);
   margin: 0 auto;
-  border: 2px solid grey;
+  cursor: pointer;
 }
 
-.row-1 li, .row-3 li, .row-5 li, .row-7 li {
-  background-color: $squareColor1;
+.odd-dark,
+.even-dark {
+  background-image: url( "../../web/img/grass.jpg" );
 }
 
-.row-2 li, .row-4 li, .row-6 li, .row-8 li {
-  background-color: blue;
+.odd-light,
+.even-light {
+  background-image: url( "../../web/img/dirt.jpg" );
+}
+
+span {
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-left: 7px;
+}
+
+.see-moves {
+  margin-left: 13em;
+}
+
+.see-moves button {
+  @include span( 8 of 16 );
+  width: $squareWidth;
+  margin-top: 2em;
+  font-size: 1em;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  cursor: pointer;
 }

@@ -58,11 +58,11 @@ li {
 
 .odd-dark,
 .even-dark {
-  background-image: url("../../web/img/grass.jpg"); }
+  background-color: #777; }
 
 .odd-light,
 .even-light {
-  background-image: url("../../web/img/dirt.jpg"); }
+  background-color: #fff; }
 
 span,
 .chess-piece {
@@ -83,7 +83,7 @@ span,
   font-weight: 700;
   border: none;
   border-radius: 5px;
-  background-color: green;
+  background-color: #777;
   color: #fff;
   cursor: pointer; }
 

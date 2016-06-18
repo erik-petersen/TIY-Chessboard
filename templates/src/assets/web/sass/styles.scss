@@ -14,8 +14,8 @@ With help from https://css-tricks.com/build-web-layouts-easily-susy/
 
 // Susy is doing all the calculations for 8 columns this time
 $susy: (
-  columns: 16,
-  container: 656px,
+  columns: 17,
+  container: 738px,
 );
 
 main {
@@ -26,6 +26,9 @@ main {
   background-color: black;
 } // end main
 
+ul {
+  @include pre(3em);
+}
 .column-header {
   margin-top: 1em;
 }
@@ -42,11 +45,26 @@ main {
   color: #fff;
 }
 
+.file {
+  @include first;
+}
+
+.file span {
+  width: $squareWidth;
+  height: $squareHeight;
+  @include span( 1 of 17 ); // each li will take up 1 column
+  position: relative;
+  top: 4em;
+  right: 25em;
+  font-size: $rankFileSize;
+  color: #fff;
+}
+
 li {
   content: " ";
   width: $squareWidth;
   height: $squareHeight;
-  @include span( 2 of 16 ); // each li will take up 1 column
+  @include span( 2 of 17 ); // each li will take up 2 columns
   margin: 0 auto;
   cursor: pointer;
 }
@@ -71,7 +89,8 @@ span,
 }
 
 .see-moves {
-  margin-left: 13em;
+  @include break;
+  @include pre(15.25em);
 }
 
 .see-moves button {

@@ -40,11 +40,27 @@ main {
   max-width: 656px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 40px; }
+  box-sizing: border-box;
+  margin-top: -1.5em;
+  padding-left: 40px;
+  background-color: black; }
   main:after {
     content: " ";
     display: block;
     clear: both; }
+
+.column-header {
+  margin-top: 1em; }
+
+.column-header span {
+  position: relative;
+  top: 1.25em;
+  left: .75em;
+  font-size: 1.5em;
+  color: #fff; }
+
+.rank {
+  color: #fff; }
 
 li {
   content: " ";
@@ -78,7 +94,7 @@ span,
   float: left;
   margin-right: 1.26582%;
   width: 82px;
-  margin-top: 2em;
+  margin: 1.25em 0 1.25em 0;
   font-size: 1em;
   font-weight: 700;
   border: none;

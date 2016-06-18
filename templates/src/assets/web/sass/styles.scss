@@ -29,14 +29,27 @@ main {
 ul {
   @include pre(3em);
 }
-.column-header {
+
+.column-header-top {
   margin-top: 1em;
 }
 
-.column-header span {
+.column-header-top span {
   position: relative;
   top: 1.25em;
   left: .75em;
+  font-size: $rankFileSize;
+  color: #fff;
+}
+
+.column-header-bottom {
+  @include break;
+}
+
+.column-header-bottom span {
+  position: relative;
+  top: .75em;
+  left: .85em;
   font-size: $rankFileSize;
   color: #fff;
 }
@@ -96,7 +109,7 @@ span,
 .see-moves button {
   @include span( 8 of 16 );
   width: $squareWidth;
-  margin: 1.25em 0 1.25em 0;
+  margin: 0 0 1.25em 0;
   font-size: 1em;
   font-weight: 700;
   border: none;

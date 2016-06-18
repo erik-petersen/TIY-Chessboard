@@ -2,7 +2,7 @@ $( function() {
   "use strict";
 
   // grabbing the 8 rows and storing each row in an array
-  var row1 = $( ".row1 li" );
+  var row1 = $( ".row-1 li" );
   var row2 = $( ".row-2 li" );
   var row3 = $( ".row-3 li" );
   var row4 = $( ".row-4 li" );
@@ -35,6 +35,8 @@ $( function() {
   var destination7 = chessBoard[6][6];
   var piece8 = chessBoard[0][5];
   var destination8 = chessBoard[1][4];
+  var piece9 = chessBoard[7][6];
+  var destination9 = chessBoard[5][5];
 
   var forwardClicks = 0; // variable to hold how many forward clicks have been made
 
@@ -58,6 +60,7 @@ $( function() {
     this is used in the switch below
   */
   function move( piece, destination ) {
+    console.log( "Piece: " + piece + "\nDestination: " + destination );
     $( destination ).append( $( piece ).html() );
     $( piece ).html( "" );
   }
@@ -70,21 +73,19 @@ $( function() {
     // when forward button is clicked, increase the counter by 1
     forwardClicks++;
 
-    console.log( forwardClicks );
+    // This should be all I need but, like the function for reverse, it isn't working
+    // move( piece.concat(forwardClicks), destination.concat(forwardClicks) );
 
-    // match the number of clicks to the appropriate case
+    // so I'm doing this wet switch...match the number of clicks to the appropriate case
     switch ( forwardClicks ) {
       case 1:
         move( piece1, destination1 );
-        console.log( destination1 );
+        console.log( chessBoard[0][0] );
         break;
       case 2:
         // DOES NOT WORK AT THE MOMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // move( piece2, destination2 );
-        var display = chessBoard[0][6];
-        console.log( $(display).children().html() );
-        $(chessBoard[2][5]).append( $(display).html() );
-        $(chessBoard[0][6]).html( "" );
+        move( piece2, destination2 );
+        console.log( destination2 );
         break;
       case 3:
         move( piece3, destination3 );
@@ -103,19 +104,11 @@ $( function() {
         break;
       case 8:
         // DOES NOT WORK AT THE MOMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // move( display8, empty8 );
-        var piece = chessBoard[0][5];
-        var destination = chessBoard[1][4];
-        console.log( $(piece).children().html() );
-        $(chessBoard[1][4]).append( $(piece).html() );
-        $(chessBoard[0][5]).html( "" );
+        move( piece8, destination8 );
+        console.log( piece8, destination8 );
         break;
       case 9:
-        var piece = chessBoard[7][6];
-        var destination = chessBoard[5][5];
-        console.log( $(piece).children().html() );
-        $(chessBoard[5][5]).append( $(piece).html() );
-        $(chessBoard[7][6]).html( "" );
+        move( piece9, destination9 );
         break;
       default:
         break;

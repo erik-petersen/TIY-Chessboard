@@ -179,13 +179,9 @@ $( function() {
     $( ".pause" ).show( 1000 );
 
     var counter = 1;
-    setInterval( function() {
 
-      $( ".pause" ).on( "click", function() {
-        setTimeout( function() {
-        }, 500);
-      });
-
+    setTimeout( function() {
+      var interval = setInterval( function() {
       switch ( counter ) {
         case 1:
           move( piece1, destination1 );
@@ -219,7 +215,12 @@ $( function() {
           break;
       } // end switch
 
+      $( ".pause" ).on( "click", function() {
+        clearInterval( interval );
+      });
+
       counter++;
+    }, 1000);
     }, 1000 ); //end setTimeout()
   }); // end click play
 

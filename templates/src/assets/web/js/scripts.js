@@ -173,12 +173,12 @@ $( function() {
 
   }); // end click step-forward
 
+  var counter = 1;
+
   $( ".play" ).on( "click", function() {
 
-    $( ".play" ).hide( 1000 );
-    $( ".pause" ).show( 1000 );
-
-    var counter = 1;
+    $( ".play" ).hide( 500 );
+    $( ".pause" ).show( 500 );
 
     setTimeout( function() {
       var interval = setInterval( function() {
@@ -217,11 +217,14 @@ $( function() {
 
       $( ".pause" ).on( "click", function() {
         clearInterval( interval );
+        $( ".pause" ).hide( 500 );
+        $( ".play" ).show( 500 );
+        counter = counter;
       });
 
       counter++;
     }, 1000);
-    }, 1000 ); //end setTimeout()
+  }, 1000 ); //end setTimeout()
   }); // end click play
 
 

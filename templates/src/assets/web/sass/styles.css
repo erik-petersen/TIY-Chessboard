@@ -1,5 +1,5 @@
 @import url(../../../../../bower_components/font-awesome/css/font-awesome.css);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(https://fonts.googleapis.com/css?family=Cinzel:400,700);
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -32,17 +32,29 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+h1 {
+  margin-top: .75em;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  font-size: 3em; }
+
+h2 {
+  font-family: "Cinzel", serif;
+  text-align: center;
+  font-size: 1.5em; }
+
 /*
 Changing Susy default global settings
 With help from https://css-tricks.com/build-web-layouts-easily-susy/
 */
 main {
-  max-width: 738px;
+  max-width: 630px;
   margin-left: auto;
   margin-right: auto;
-  height: 47em;
+  height: 36em;
   box-sizing: border-box;
-  margin-top: -1.5em;
+  margin-top: 1.5em;
   padding-left: 40px;
   background-color: black; }
   main:after {
@@ -54,13 +66,14 @@ ul {
   margin-left: 3em; }
 
 .column-header-top {
-  margin-top: 1em; }
+  margin-top: 1em;
+  padding-bottom: .5em; }
 
 .column-header-top span {
   position: relative;
   top: 1.25em;
   left: .8em;
-  font-size: 1.5em;
+  font-size: 1.15em;
   color: #fff; }
 
 .column-header-bottom {
@@ -70,7 +83,7 @@ ul {
   position: relative;
   top: .75em;
   left: .87em;
-  font-size: 1.5em;
+  font-size: 1.15em;
   color: #fff; }
 
 .rank {
@@ -80,15 +93,15 @@ ul {
   margin-left: 0; }
 
 .file-first span {
-  width: 82px;
-  height: 70px;
+  width: 63px;
+  height: 52px;
   width: 4.7619%;
   float: left;
   margin-right: 1.19048%;
   position: relative;
-  top: 3.85em;
-  right: 25em;
-  font-size: 1.5em;
+  top: 3.75em;
+  right: 27.25em;
+  font-size: 1.15em;
   color: #fff; }
 
 .file-last {
@@ -97,15 +110,15 @@ ul {
   margin-left: 0;
   margin-right: 0;
   position: relative;
-  bottom: 72.29em;
-  left: 63.5em;
-  font-size: .42em;
+  bottom: 55.795em;
+  left: 53em;
+  font-size: .5em;
   color: #fff; }
 
 li {
   content: " ";
-  width: 82px;
-  height: 70px;
+  width: 63px;
+  height: 52px;
   width: 10.71429%;
   float: left;
   margin-right: 1.19048%;
@@ -122,7 +135,7 @@ li {
 
 span,
 .chess-piece {
-  font-size: 3.5em;
+  font-size: 2.5em;
   font-weight: 700;
   margin-left: 7px; }
 
@@ -137,8 +150,8 @@ span,
   width: 32.43243%;
   float: left;
   margin-right: 1.35135%;
-  width: 82px;
-  margin: 0 0 1.25em 0;
+  width: 63px;
+  margin: 0 0 1.75em 0;
   font-size: 1em;
   font-weight: 700;
   border: none;

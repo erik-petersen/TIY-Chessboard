@@ -24,7 +24,7 @@
 
       <!-- Begin row-1 -->
       <ul class="row-1">
-        <li class="file"><span>8</span></li>
+        <li class="file-first"><span>8</span></li>
         <li class="odd-light"><span class="chess-piece">&#9820;</span></li>
         <li class="odd-dark"><span class="chess-piece">&#9822;</span></li>
         <li class="odd-light"><span class="chess-piece">&#9821;</span></li>
@@ -37,7 +37,7 @@
 
       <!-- Begin row-2 -->
       <ul class="row-2">
-        <li class="file"><span>7</span></li>
+        <li class="file-first"><span>7</span></li>
         <li class="even-dark"><span class="chess-piece">&#9823;</span></li>
         <li class="even-light"><span class="chess-piece">&#9823;</span></li>
         <li class="even-dark"><span class="chess-piece">&#9823;</span></li>
@@ -50,7 +50,7 @@
 
       <!-- Begin row-3 -->
       <ul class="row-3">
-        <li class="file"><span>6</span></li>
+        <li class="file-first"><span>6</span></li>
         <li class="odd-light"></li>
         <li class="odd-dark"></li>
         <li class="odd-light"></li>
@@ -63,7 +63,7 @@
 
       <!-- Begin row-4 -->
       <ul class="row-4">
-        <li class="file"><span>5</span></li>
+        <li class="file-first"><span>5</span></li>
         <li class="even-dark"></li>
         <li class="even-light"></li>
         <li class="even-dark"></li>
@@ -76,7 +76,7 @@
 
       <!-- Begin row-5 -->
       <ul class="row-5">
-        <li class="file"><span>4</span></li>
+        <li class="file-first"><span>4</span></li>
         <li class="odd-light"></li>
         <li class="odd-dark"></li>
         <li class="odd-light"></li>
@@ -89,7 +89,7 @@
 
       <!-- Begin row-6 -->
       <ul class="row-6">
-        <li class="file"><span>3</span></li>
+        <li class="file-first"><span>3</span></li>
         <li class="even-dark"></li>
         <li class="even-light"></li>
         <li class="even-dark"></li>
@@ -102,7 +102,7 @@
 
       <!-- Begin row-7 -->
       <ul class="row-7">
-        <li class="file"><span>2</span></li>
+        <li class="file-first"><span>2</span></li>
         <li class="odd-light"><span class="chess-piece">&#9817;</span></li>
         <li class="odd-dark"><span class="chess-piece">&#9817;</span></li>
         <li class="odd-light"><span class="chess-piece">&#9817;</span></li>
@@ -115,7 +115,7 @@
 
       <!-- Begin row-8 -->
       <ul class="row-8">
-        <li class="file"><span>1</span></li>
+        <li class="file-first"><span>1</span></li>
         <li class="even-dark"><span class="chess-piece">&#9814;</span></li>
         <li class="even-light"><span class="chess-piece">&#9816;</span></li>
         <li class="even-dark"><span class="chess-piece">&#9815;</span></li>
@@ -139,9 +139,33 @@
       </ul> <!-- end column-header-bottom -->
 
       <nav class="see-moves">
-        <button name="step back" class="step-backward"> < </button>
-        <button name="step forward" class="step-forward"> > </button>
+        <button name="step back" class="step-backward">
+          <span class="fa fa-backward" aria-hidden="true"></span>
+        </button>
+        <button name="step back" class="play">
+          <span class="fa fa-play" aria-hidden="true"></span>
+        </button>
+        <button name="step back" class="pause">
+          <span class="fa fa-pause" aria-hidden="true"></span>
+        </button>
+        <button name="step forward" class="step-forward">
+          <span class="fa fa-forward" aria-hidden="true"></span>
+        </button>
       </nav>
+
+      <ul>
+        <li class="file-last"><span>8</span></li>
+        <li class="file-last"><span>7</span></li>
+        <li class="file-last"><span>6</span></li>
+        <li class="file-last"><span>5</span></li>
+        <li class="file-last"><span>4</span></li>
+        <li class="file-last"><span>3</span></li>
+        <li class="file-last"><span>2</span></li>
+        <li class="file-last"><span>1</span></li>
+      </ul>
+
+
+
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

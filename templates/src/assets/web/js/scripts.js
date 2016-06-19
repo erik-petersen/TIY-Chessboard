@@ -19,42 +19,30 @@ $( function() {
     storing the 9 moves of the Catalan Opening.  Piece is where is is and destination1
     is where it is going
   */
-  var piece1 = chessBoard[6][3];
-  var destination1 = chessBoard[4][3];
-  var piece2 = chessBoard[0][6];
-  var destination2 = chessBoard[2][5];
-  var piece3 = chessBoard[6][2];
-  var destination3 = chessBoard[4][2];
-  var piece4 = chessBoard[1][4];
-  var destination4 = chessBoard[2][4];
-  var piece5 = chessBoard[6][6];
-  var destination5 = chessBoard[5][6];
-  var piece6 = chessBoard[1][3];
-  var destination6 = chessBoard[3][3];
-  var piece7 = chessBoard[7][5];
-  var destination7 = chessBoard[6][6];
-  var piece8 = chessBoard[0][5];
-  var destination8 = chessBoard[1][4];
-  var piece9 = chessBoard[7][6];
-  var destination9 = chessBoard[5][5];
+  var piece1 = chessBoard[6][4];
+  var destination1 = chessBoard[4][4];
+  var piece2 = chessBoard[0][7];
+  var destination2 = chessBoard[2][6];
+  var piece3 = chessBoard[6][3];
+  var destination3 = chessBoard[4][3];
+  var piece4 = chessBoard[1][5];
+  var destination4 = chessBoard[2][5];
+  var piece5 = chessBoard[6][7];
+  var destination5 = chessBoard[5][7];
+  var piece6 = chessBoard[1][4];
+  var destination6 = chessBoard[3][4];
+  var piece7 = chessBoard[7][6];
+  var destination7 = chessBoard[6][7];
+  var piece8 = chessBoard[0][6];
+  var destination8 = chessBoard[1][5];
+  var piece9 = chessBoard[7][7];
+  var destination9 = chessBoard[5][6];
 
   var forwardClicks = 0; // variable to hold how many forward clicks have been made
 
   /***********************************************************
   FUNCTIONS
   ***********************************************************/
-  // This function contains the original code I was using
-  // function move1( display1, empty1 ) {
-  //   console.log( "Before: " + chessBoard[6][3].textContent );
-  //   console.log( "Before: " + chessBoard[4][3].textContent );
-  //   console.log( $(display1).children().html() );
-  //   $( empty1 ).append( $(display1).html() );
-  //   $( display1 ).html( "" );
-  //
-  //   console.log( "After: " + chessBoard[6][3].textContent );
-  //   console.log( "After: " + chessBoard[4][3].textContent );
-  // }
-
   /*
     this function is used to make the moves, swapping values of piece and destination.
     this is used in the switch below
@@ -65,13 +53,32 @@ $( function() {
     $( piece ).html( "" );
   }
 
+  function moveBack( piece, destination ) {
+    var reversedPiece = destination;
+    var reversedDestination = piece;
+    console.log( "Reversed Piece: " + reversedPiece + "\nReversed Destination: " + reversedDestination );
+    $( reversedDestination ).append( $( reversedPiece ).html() );
+    $( reversedPiece ).html( "" );
+  }
+
   /***********************************************************
   CLICK EVENT FOR STEP FORWARD BUTTON
   ***********************************************************/
   $( ".step-forward" ).on( "click", function() {
 
     // when forward button is clicked, increase the counter by 1
-    forwardClicks++;
+    if( forwardClicks >= 9 ) {
+      // forwardClicks = 9;
+      $( ".step-forward" ).prop( "disabled", true );
+    }
+
+    else {
+      forwardClicks++;
+      // $( ".step-forward" ).disable( false );
+    }
+
+    console.log( forwardClicks );
+    // forwardClicks++;
 
     // This should be all I need but, like the function for reverse, it isn't working
     // move( piece.concat(forwardClicks), destination.concat(forwardClicks) );
@@ -126,71 +133,97 @@ $( function() {
     // match the number of clicks to the appropriate case...at the end, decrease forwardClicks
     switch ( forwardClicks ) {
       case 1:
-        console.log( "Before: " + chessBoard[6][3].textContent );
-        console.log( "Before: " + chessBoard[4][3].textContent );
-
-        var display = chessBoard[4][3];
-        console.log( $(display).children().html() );
-        $(chessBoard[6][3]).append( $(display).html() );
-        $(chessBoard[4][3]).html( "" );
-
-        console.log( "After: " + chessBoard[6][3].textContent );
-        console.log( "After: " + chessBoard[4][3].textContent );
+        moveBack( piece1, destination1 );
         break;
       case 2:
-        var display = chessBoard[2][5];
-        console.log( $(display).children().html() );
-        $(chessBoard[0][6]).append( $(display).html() );
-        $(chessBoard[2][5]).html( "" );
+        moveBack( piece2, destination2 );
         break;
       case 3:
-        var display = chessBoard[4][2];
-        console.log( $(display).children().html() );
-        $(chessBoard[6][2]).append( $(display).html() );
-        $(chessBoard[4][2]).html( "" );
+        moveBack( piece3, destination3 );
         break;
       case 4:
-        var display = chessBoard[2][4];
-        console.log( $(display).children().html() );
-        $(chessBoard[1][4]).append( $(display).html() );
-        $(chessBoard[2][4]).html( "" );
+        moveBack( piece4, destination4 );
         break;
       case 5:
-        var display = chessBoard[5][6];
-        console.log( $(display).children().html() );
-        $(chessBoard[6][6]).append( $(display).html() );
-        $(chessBoard[5][6]).html( "" );
+        moveBack( piece5, destination5 );
         break;
       case 6:
-        var display = chessBoard[3][3];
-        console.log( $(display).children().html() );
-        $(chessBoard[1][3]).append( $(display).html() );
-        $(chessBoard[3][3]).html( "" );
+        moveBack( piece6, destination6 );
         break;
       case 7:
-        var display = chessBoard[6][6];
-        console.log( $(display).children().html() );
-        $(chessBoard[7][5]).append( $(display).html() );
-        $(chessBoard[6][6]).html( "" );
+        moveBack( piece7, destination7 );
         break;
       case 8:
-        var display = chessBoard[1][4];
-        console.log( $(display).children().html() );
-        $(chessBoard[0][5]).append( $(display).html() );
-        $(chessBoard[1][4]).html( "" );
+        moveBack( piece8, destination8 );
         break;
       case 9:
-        var display = chessBoard[5][5];
-        console.log( $(display).children().html() );
-        $(chessBoard[7][6]).append( $(display).html() );
-        $(chessBoard[5][5]).html( "" );
+        moveBack( piece9, destination9 );
         break;
       default:
         break;
     }
 
-    forwardClicks--;
+    if( forwardClicks < 0 ) {
+      forwardClicks = 0;
+    }
+
+    else {
+      forwardClicks--;
+    }
+
   }); // end click step-forward
+
+  $( ".play" ).on( "click", function() {
+
+    $( ".play" ).hide( 1000 );
+    $( ".pause" ).show( 1000 );
+
+    var counter = 1;
+    setInterval( function() {
+
+      $( ".pause" ).on( "click", function() {
+        setTimeout( function() {
+        }, 500);
+      });
+
+      switch ( counter ) {
+        case 1:
+          move( piece1, destination1 );
+          console.log( chessBoard[0][0] );
+          break;
+        case 2:
+          move( piece2, destination2 );
+          break;
+        case 3:
+          move( piece3, destination3 );
+          break;
+        case 4:
+          move( piece4, destination4 );
+          break;
+        case 5:
+          move( piece5, destination5 );
+          break;
+        case 6:
+          move( piece6, destination6 );
+          break;
+        case 7:
+          move( piece7, destination7 );
+          break;
+        case 8:
+          move( piece8, destination8 );
+          break;
+        case 9:
+          move( piece9, destination9 );
+          break;
+        default:
+          break;
+      } // end switch
+
+      counter++;
+    }, 1000 ); //end setTimeout()
+  }); // end click play
+
+
 
   /*
     this should work but doesn't like everything else in this project

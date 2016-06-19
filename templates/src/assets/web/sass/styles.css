@@ -40,6 +40,7 @@ main {
   max-width: 738px;
   margin-left: auto;
   margin-right: auto;
+  height: 47em;
   box-sizing: border-box;
   margin-top: -1.5em;
   padding-left: 40px;
@@ -58,7 +59,7 @@ ul {
 .column-header-top span {
   position: relative;
   top: 1.25em;
-  left: .75em;
+  left: .8em;
   font-size: 1.5em;
   color: #fff; }
 
@@ -68,26 +69,37 @@ ul {
 .column-header-bottom span {
   position: relative;
   top: .75em;
-  left: .85em;
+  left: .87em;
   font-size: 1.5em;
   color: #fff; }
 
 .rank {
   color: #fff; }
 
-.file {
+.file-first {
   margin-left: 0; }
 
-.file span {
+.file-first span {
   width: 82px;
   height: 70px;
   width: 4.7619%;
   float: left;
   margin-right: 1.19048%;
   position: relative;
-  top: 4em;
+  top: 3.85em;
   right: 25em;
   font-size: 1.5em;
+  color: #fff; }
+
+.file-last {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  bottom: 72.29em;
+  left: 63.5em;
+  font-size: .42em;
   color: #fff; }
 
 li {
@@ -116,12 +128,15 @@ span,
 
 .see-moves {
   clear: both;
-  margin-left: 15.25em; }
+  margin-left: 13em; }
 
-.see-moves button {
-  width: 49.36709%;
+.step-backward,
+.play,
+.pause,
+.step-forward {
+  width: 32.43243%;
   float: left;
-  margin-right: 1.26582%;
+  margin-right: 1.35135%;
   width: 82px;
   margin: 0 0 1.25em 0;
   font-size: 1em;
@@ -131,5 +146,8 @@ span,
   background-color: #777;
   color: #fff;
   cursor: pointer; }
+
+.pause {
+  display: none; }
 
 /*# sourceMappingURL=styles.css.map */

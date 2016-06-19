@@ -20,6 +20,7 @@ $susy: (
 
 main {
   @include container;
+  height: 47em;
   box-sizing: border-box;
   margin-top: -1.5em;
   padding-left: 40px;
@@ -37,7 +38,7 @@ ul {
 .column-header-top span {
   position: relative;
   top: 1.25em;
-  left: .75em;
+  left: .8em;
   font-size: $rankFileSize;
   color: #fff;
 }
@@ -49,7 +50,7 @@ ul {
 .column-header-bottom span {
   position: relative;
   top: .75em;
-  left: .85em;
+  left: .87em;
   font-size: $rankFileSize;
   color: #fff;
 }
@@ -58,18 +59,27 @@ ul {
   color: #fff;
 }
 
-.file {
+.file-first {
   @include first;
 }
 
-.file span {
+.file-first span {
   width: $squareWidth;
   height: $squareHeight;
   @include span( 1 of 17 ); // each li will take up 1 column
   position: relative;
-  top: 4em;
+  top: 3.85em;
   right: 25em;
   font-size: $rankFileSize;
+  color: #fff;
+}
+
+.file-last {
+  @include span( 17 of 17 ); // each li will take up 1 column
+  position: relative;
+  bottom: 72.29em;
+  left: 63.5em;
+  font-size: .42em;
   color: #fff;
 }
 
@@ -103,11 +113,14 @@ span,
 
 .see-moves {
   @include break;
-  @include pre(15.25em);
+  @include pre(13em);
 }
 
-.see-moves button {
-  @include span( 8 of 16 );
+.step-backward,
+.play,
+.pause,
+.step-forward {
+  @include span( 5 of 15 );
   width: $squareWidth;
   margin: 0 0 1.25em 0;
   font-size: 1em;
@@ -117,4 +130,8 @@ span,
   background-color: #777;
   color: #fff;
   cursor: pointer;
+}
+
+.pause {
+  display: none;
 }

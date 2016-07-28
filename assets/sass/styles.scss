@@ -1,6 +1,6 @@
-@import "../../../../../bower_components/meyer-reset/stylesheets/_meyer-reset.scss";
-@import "../../../../../bower_components/susy/sass/susy";
-@import "../../../../../bower_components/font-awesome/css/font-awesome.css";
+@import "../../bower_components/meyer-reset/stylesheets/_meyer-reset.scss";
+@import "../../bower_components/susy/sass/susy";
+@import "../../bower_components/font-awesome/css/font-awesome.css";
 @import url(https://fonts.googleapis.com/css?family=Cinzel:400,700);
 
   $squareWidth: 63px;
@@ -10,6 +10,7 @@
 
   h1 {
     margin-top: .75em;
+    margin-left: .25em;
     text-align: center;
     font-family: $headerFont;
     font-weight: 400;
@@ -17,6 +18,7 @@
   }
 
   h2 {
+    margin-left: .25em;
     font-family: $headerFont;
     text-align: center;
     font-size: 1.5em;
@@ -129,7 +131,7 @@
 
   .see-moves {
     @include break;
-    @include pre(13em);
+    @include pre(11.75em);
   }
 
   .step-backward,

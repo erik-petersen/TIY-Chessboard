@@ -90,7 +90,6 @@ $( function() {
         console.log( chessBoard[0][0] );
         break;
       case 2:
-        // DOES NOT WORK AT THE MOMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         move( piece2, destination2 );
         console.log( destination2 );
         break;
@@ -110,7 +109,6 @@ $( function() {
         move( piece7, destination7 );
         break;
       case 8:
-        // DOES NOT WORK AT THE MOMENT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         move( piece8, destination8 );
         console.log( piece8, destination8 );
         break;
@@ -173,6 +171,9 @@ $( function() {
 
   }); // end click step-forward
 
+  /***********************************************************
+  CLICK EVENT FOR PLAY BUTTON
+  ***********************************************************/
   var counter = 1;
 
   $( ".play" ).on( "click", function() {
@@ -219,7 +220,7 @@ $( function() {
         clearInterval( interval );
         $( ".pause" ).hide( 500 );
         $( ".play" ).show( 500 );
-        counter = counter;
+        // counter = counter;
       });
 
       counter++;
@@ -227,10 +228,8 @@ $( function() {
   }, 1000 ); //end setTimeout()
   }); // end click play
 
-
-
   /*
-    this should work but doesn't like everything else in this project
+    this should work but doesn't at the moment
 
     console.log( "Clicks" + forwardClicks );
     var tempDisplay = "display" + forwardClicks;
